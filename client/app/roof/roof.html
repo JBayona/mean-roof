@@ -1,0 +1,311 @@
+<section class="bg-primary" id="about">
+        <div class="container">
+            <div class="row">                
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">Fill in your information below and someone will get back to you within the next 48 hrs.</h2>
+                    <hr class="light">
+                    <!--p class="text-faded">Adding some test text.</p>
+                    <p class="text-faded">Here we can add a brief description regarding the section of text 1.</p -->
+                    <form class="form-horizontal" name="userData" ng-submit="sendMail()"> 
+                        <fieldset>
+                        		<div class="form-group" ng-show="requestProcessed">
+                                    <div class="col-sm-offset-2 col-sm-9 alert alert-dismissable alert-danger">
+							          <button type="button" class="close" data-dismiss="alert">×</button>
+							          <p>You will receive an email confirmation shortly</p>
+      								</div>
+                                </div>
+                                <div class="form-group">
+                                     <label for="user" class="col-sm-2 form-label">* Name</label>
+                                     <div class="col-sm-9">
+                                        <input name="name" 
+                                               ng-model="user.name"
+                                               id="name"
+                                               class="form-control" 
+                                               ng-minlength="3" 
+                                               required/>
+                                     </div>
+                                     <!--<div ng-show="userData.name.$error" ng-messages="userData.name.$error">
+                                        <p ng-message="minlength">Your name is too short.</p>
+                                        <p ng-message="required">Your name is required.</p>
+                                    </div> -->
+                                </div>
+                                <div class="form-group">
+                                     <label for="address" class="col-sm-2 form-label">Address</label>
+                                     <div class="col-sm-9">
+                                        <input name="address" 
+                                               ng-model="user.address"
+                                               id="address"
+                                               class="form-control" />
+                                     </div>
+                                </div>
+                                <div class="form-group">
+                                     <label for="city" class="col-sm-2 form-label">* City</label>
+                                     <div class="col-sm-9">
+                                        <input name="city"
+                                               ng-model="user.city"
+                                               id="city" 
+                                               class="form-control" 
+                                               ng-minlength="2" 
+                                               required/>
+                                     </div>
+                                     <!--<div ng-messages="userData.city.$error">
+                                        <p ng-message="minlength">The name of the city is too short.</p>
+                                        <p ng-message="required">The city is required.</p>
+                                    </div> -->
+                                </div>
+                                <div class="form-group">
+                                     <label for="state" class="col-sm-2 form-label">* State</label>
+                                     <div class="col-sm-9">
+                                        <input name="state"
+                                               ng-model="user.state"
+                                               id="state"
+                                               class="form-control" 
+                                               ng-minlength="2" 
+                                               required/>
+                                     </div>
+                                     <!--<div ng-messages="userData.state.$error">
+                                        <p ng-message="minlength">The name of the state is too short.</p>
+                                        <p ng-message="required">The state is required.</p>
+                                    </div> -->
+                                </div>
+                                 <div class="form-group">
+                                     <label for="zip" class="col-sm-2 form-label">* ZIP</label>
+                                     <div class="col-sm-9">
+                                        <input name="zip" 
+                                               ng-model="user.zip"
+                                               id="zip"
+                                               class="form-control" 
+                                               ng-minlength="2" 
+                                               required/>
+                                     </div>
+                                     <!--div ng-messages="userData.zip.$error">
+                                        <p ng-message="minlength">The zip code is too short.</p>
+                                        <p ng-message="required">The zip is required.</p>
+                                    </div> -->
+                                </div>
+                                <div class="form-group">
+                                     <label for="phone" class="col-sm-2 form-label">* Phone</label>
+                                     <div class="col-sm-9">
+                                        <input name="phone"
+                                               ng-model="user.phone" 
+                                               id="phone"
+                                               class="form-control" 
+                                               ng-minlength="2" 
+                                               required/>
+                                     </div>
+                                     <!--<div ng-messages="userData.phone.$error">
+                                        <p ng-message="minlength">Your phone number is too short.</p>
+                                        <p ng-message="required">The phone number is required.</p>
+                                    </div> -->
+                                </div>
+                                 <div class="form-group">
+                                     <label for="email" class="col-sm-2 form-label">* Email</label>
+                                     <div class="col-sm-9">
+                                        <input name="email"
+                                               ng-model="user.email" 
+                                               id="email"
+                                               type="email"
+                                               class="form-control" 
+                                               required/>
+                                     </div>
+                                     <!--<div ng-messages="userData.email.$error">
+                                        <p ng-message="required">Your mail is required.</p>
+                                    </div> -->
+                                </div>
+                                <div class="form-group">
+                                    <div class="text-center">
+                                        <!--button type="submit" class="btn btn-primary btn-raised">Login</button-->
+                                        <button type="submit" class="btn btn-default btn-xl wow tada">Send</button>
+                                    </div>
+                                </div>
+                            <center><p style="font-size:10px">* Indicate required fields</p></center>
+                        </fieldset>   
+                    </form>     
+                </div>
+                <!--<div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">Text 2</h2>
+                    <hr class="light">                    
+                    <p class="text-faded">Adding some test text.</p>
+                    <p class="text-faded">Here we can add a brief description regarding the section of text 2.</p>                    
+                </div>
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                      
+                    <h2 class="section-heading">Text 3</h2>
+                    <hr class="light">                   
+                    <p class="text-faded">Adding some test text.</p>
+                    <p class="text-faded">Here we can add a brief description regarding the section of text 3.</p>
+                </div> -->
+                
+            </div>
+        </div>
+    </section>
+    <section id="plans">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Services</h2>
+                    <hr class="primary">
+                    <p>
+                       We specialize in energy saving home repairs including but not limited to the following
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 col-md-4">
+                    <div class="well">
+                        <h2 class="text-muted">Solar</h2>                    
+                        <ul>
+                            <li>Description 1</li>
+                            <li>Description 2</li>
+                            <li>Description 3</li>
+                            <li>Description 4</li> 
+                            <li>Description 5</li>                     
+                        </ul>          
+                        
+                    </div>
+                </div>
+                <div class="col-sm-4 col-md-4">
+                    <div class="well">
+                          <h2 class="text-muted">Roofing</h2>                    
+                        <ul>
+                            <li>Description 1</li>
+                            <li>Description 2</li>
+                            <li>Description 3</li>
+                            <li>Description 4</li> 
+                            <li>Description 5</li>                     
+                        </ul>          
+                                             
+                    </div>
+                </div>
+                <div class="col-sm-4 col-md-4">
+                    <div class="well">
+                          <h2 class="text-muted">Windows</h2>                    
+                        <ul>
+                            <li>Description 1</li>
+                            <li>Description 2</li>
+                            <li>Description 3</li>
+                            <li>Description 4</li> 
+                            <li>Description 5</li>                     
+                        </ul>          
+                                           
+                    </div>
+                </div>
+            </div>
+            <center><p style="font-size:10px">* You must read this!</p></center>
+        </div>
+    </section>
+    <section id="tools">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Tools</h2>
+                    <hr class="primary">
+                    <p>
+                        Additional information: 
+                    </p>
+                </div>
+            </div>
+        </div>        
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x fa-tachometer wow bounceIn text-primary" data-wow-delay=".1s"></i>
+                        <h3>Save Energy</h3>
+                        <p class="text-muted">Savings calculators and more</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x fa-money wow bounceIn text-primary" data-wow-delay=".2s"></i>
+                        <h3>Financing Available</h3>
+                        <p class="text-muted"> Financing Services available to you</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x fa-map-marker wow bounceIn text-primary" data-wow-delay=".2s"></i>
+                        <h3>Location</h3>
+                        <p class="text-muted">Click here to see the area we service</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <br>
+    </section>  
+    
+    <aside class="bg-dark">
+        <div class="container text-center">
+            <div class="call-to-action">
+                <h2>If you are interested in &#9635; H &amp; S please send us an email with your information.</h2>
+                <a href="#about" class="btn btn-default btn-xl wow tada">I'm interested</a>
+            </div>
+        </div>
+    </aside>
+
+
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">Contact</h2>
+                    <hr class="primary">
+                    <p>If you have any questions or doubts, send a message to:</p>
+                </div>
+                
+                <div class="col-lg-12 text-center">
+                    <i class="fa fa-twitter fa-3x wow bounceIn" data-wow-delay=".1s" title="@hnsca"></i>
+                    &nbsp;&nbsp;
+                    <i class="fa fa-facebook fa-3x wow bounceIn" data-wow-delay=".1s" title="info@hnsca.com"></i>
+                    &nbsp;&nbsp;
+                    <i class="fa fa-book fa-3x wow bounceIn" data-wow-delay=".1s" title="info@hnsca.com"></i>
+                    &nbsp;&nbsp;
+                    <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s" title="info@hnsca.com"></i>
+                    &nbsp;&nbsp;
+                    <i class="fa fa-phone fa-3x wow bounceIn" data-wow-delay=".1s" title="951-402-7663"></i>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--<div class="header">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand" href="#/">roofApp</a>
+          </div>
+
+          <div class="collapse navbar-collapse" id="js-navbar-collapse">
+
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#/">Home</a></li>
+              <li><a ng-href="#/about">About</a></li>
+              <li><a ng-href="#/">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+    <div ng-view=""></div>
+    </div>
+
+    <div class="footer">
+      <div class="container">
+        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+      </div>
+    </div>-->
