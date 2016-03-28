@@ -24,11 +24,13 @@
                                                ng-minlength="3" 
                                                required/>
                                      </div>
-                                     <!--<div ng-show="userData.name.$error" ng-messages="userData.name.$error">
-                                        <p ng-message="minlength">Your name is too short.</p>
-                                        <p ng-message="required">Your name is required.</p>
-                                    </div> -->
                                 </div>
+                                <div class="form-group" ng-show="userData.name.$invalid && userData.name.$dirty && !submitted">
+							    	<div class="col-sm-12" ng-messages="userData.name.$error">
+      										<div ng-message="required">This is a required field.</div>
+      										<div ng-message="minlength">Your name is too short.</div>
+    								</div>
+   								</div>
                                 <div class="form-group">
                                      <label for="address" class="col-sm-2 form-label">Address</label>
                                      <div class="col-sm-9">
@@ -48,11 +50,13 @@
                                                ng-minlength="2" 
                                                required/>
                                      </div>
-                                     <!--<div ng-messages="userData.city.$error">
-                                        <p ng-message="minlength">The name of the city is too short.</p>
-                                        <p ng-message="required">The city is required.</p>
-                                    </div> -->
                                 </div>
+                                <div class="form-group" ng-show="userData.city.$invalid && userData.city.$dirty && !submitted">
+							    	<div class="col-sm-12" ng-messages="userData.city.$error">
+      										<div ng-message="required">The city is required.</div>
+      										<div ng-message="minlength">The name of the city is too short.</div>
+    								</div>
+   								</div>
                                 <div class="form-group">
                                      <label for="state" class="col-sm-2 form-label">* State</label>
                                      <div class="col-sm-9">
@@ -63,11 +67,13 @@
                                                ng-minlength="2" 
                                                required/>
                                      </div>
-                                     <!--<div ng-messages="userData.state.$error">
-                                        <p ng-message="minlength">The name of the state is too short.</p>
-                                        <p ng-message="required">The state is required.</p>
-                                    </div> -->
                                 </div>
+                                <div class="form-group" ng-show="userData.state.$invalid && userData.state.$dirty && !submitted">
+							    	<div class="col-sm-12" ng-messages="userData.state.$error">
+      										<div ng-message="required">The state is required.</div>
+      										<div ng-message="minlength">The name of the state is too short.</div>
+    								</div>
+   								</div>
                                  <div class="form-group">
                                      <label for="zip" class="col-sm-2 form-label">* ZIP</label>
                                      <div class="col-sm-9">
@@ -78,11 +84,13 @@
                                                ng-minlength="2" 
                                                required/>
                                      </div>
-                                     <!--div ng-messages="userData.zip.$error">
-                                        <p ng-message="minlength">The zip code is too short.</p>
-                                        <p ng-message="required">The zip is required.</p>
-                                    </div> -->
                                 </div>
+                                <div class="form-group" ng-show="userData.zip.$invalid && userData.zip.$dirty && !submitted">
+							    	<div class="col-sm-12" ng-messages="userData.zip.$error">
+      										<div ng-message="required">The zip code is required.</div>
+      										<div ng-message="minlength">The zip code is too short.</div>
+    								</div>
+   								</div>
                                 <div class="form-group">
                                      <label for="phone" class="col-sm-2 form-label">* Phone</label>
                                      <div class="col-sm-9">
@@ -93,11 +101,13 @@
                                                ng-minlength="2" 
                                                required/>
                                      </div>
-                                     <!--<div ng-messages="userData.phone.$error">
-                                        <p ng-message="minlength">Your phone number is too short.</p>
-                                        <p ng-message="required">The phone number is required.</p>
-                                    </div> -->
                                 </div>
+                                <div class="form-group" ng-show="userData.phone.$invalid && userData.phone.$dirty && !submitted">
+							    	<div class="col-sm-12" ng-messages="userData.phone.$error">
+      										<div ng-message="required">The phone is required.</div>
+      										<div ng-message="minlength">The phone number is too short.</div>
+    								</div>
+   								</div>
                                  <div class="form-group">
                                      <label for="email" class="col-sm-2 form-label">* Email</label>
                                      <div class="col-sm-9">
@@ -108,14 +118,17 @@
                                                class="form-control" 
                                                required/>
                                      </div>
-                                     <!--<div ng-messages="userData.email.$error">
-                                        <p ng-message="required">Your mail is required.</p>
-                                    </div> -->
                                 </div>
+                                <div class="form-group" ng-show="userData.email.$invalid && userData.email.$dirty && !submitted">
+							    	<div class="col-sm-12" ng-messages="userData.email.$error">
+      										<div ng-message="required">The email is required.</div>
+      										<div ng-message="email">Your email address is invalid.</div>
+    								</div>
+   								</div>
                                 <div class="form-group">
                                     <div class="text-center">
                                         <!--button type="submit" class="btn btn-primary btn-raised">Login</button-->
-                                        <button type="submit" class="btn btn-default btn-xl wow tada">Send</button>
+                                        <button type="submit" ng-disabled="!userData.$valid" class="btn btn-default btn-xl wow tada">Send</button>
                                     </div>
                                 </div>
                             <center><p style="font-size:10px">* Indicate required fields</p></center>
