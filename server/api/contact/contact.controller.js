@@ -10,20 +10,17 @@ exports.index = function(req, res) {
 exports.sendMail = function(req, res) {
 
   var nodemailer = require('nodemailer');
- 	var smtpConfig = {
+  var smtpConfig = {
 	    host: 'box428.bluehost.com',
 	    port: 465,
-	    //service: 'Gmail',
-	    secure: false, // use SSL
+	    secure: true, // use SSL
 	    auth: {
 	        user: 'info@hnsca.com',
-	        pass: 'Amanda@hns2016.'
-	        //user: 'info@hnsca.com',
-	        //pass: 'Amanda@hns2016'
+	        pass: 'Amanda@hns2016'
 	    },
 	    requireTLS: true,
-	    debug: true
-	};
+	    //debug: true
+   };
   var transporter = nodemailer.createTransport(smtpConfig);
   var data = req.body;
   var bodyText = 	'<p>Hi Amanda,<p>' +
@@ -48,14 +45,16 @@ exports.sendMail = function(req, res) {
   // setup e-mail data with unicode symbols
 	var mailOptions = {
 	    from: "info@hnsca.com", // sender address
-	    to: "jorgebayona92@gmail.com", // list of receivers
+	    to: 'amanda.hermes@gmail.com',
+	    //cc: "jorgebayona92@gmail.com,ne.delgado@gmail.com", // list of receivers
 	    subject: "New website contact request", // Subject line
 	    html: bodyText // body message
 	};
 
 	var mailOptionsCustomer = {
-			from: "info@hnsca.com", // sender address
-	    to: "jordavids_22@hotmail.com", // list of receivers
+		from: "info@hnsca.com", // sender address
+	    to: data.email, // list of receivers
+	    //cc: 'ne.delgado@gmail.com,amanda.hermes@gmail.com',
 	    subject: "Your request has been received", // Subject line
 	    html: bodyTextCustomer  // body message
 	};
