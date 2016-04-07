@@ -11,14 +11,18 @@ exports.sendMail = function(req, res) {
 
   var nodemailer = require('nodemailer');
   var smtpConfig = {
-	    host: 'box428.bluehost.com',
-	    port: 465,
-	    secure: true, // use SSL
+	    host: 'mail.hnsca.com',
+	    port: 587,
+	    secure: false, // use SSL
 	    auth: {
 	        user: 'info@hnsca.com',
 	        pass: 'Amanda@hns2016'
 	    },
-	    requireTLS: true,
+	    tls : {
+	    	rejectUnauthorized : false
+	    },
+	    ignoreTLS: false
+
 	    //debug: true
    };
   var transporter = nodemailer.createTransport(smtpConfig);
